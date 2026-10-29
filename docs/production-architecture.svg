@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">HQ Tracker production architecture</title>
+  <desc id="desc">Members use a browser to access the React and Vite production app hosted on Cloudflare. Check-in attempts run a browser geolocation check before the app reads and writes attendance data to Supabase.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f8fc}.card{fill:#fff;stroke:#d9ddec;stroke-width:2}.head{font:700 22px Arial,sans-serif;fill:#20233a}.body{font:16px Arial,sans-serif;fill:#555b73}.small{font:14px Arial,sans-serif;fill:#6b7188}.line{fill:none;stroke:#7567e8;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.tag{fill:#efedff;stroke:#dcd6ff;stroke-width:1}.tagtext{font:700 13px Arial,sans-serif;fill:#6253ce}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7567e8"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="680" rx="24"/>
+  <text x="60" y="58" class="head" font-size="30">HQ Tracker · Production Architecture</text>
+  <text x="60" y="88" class="body">High-level flow for the live application</text>
+  <rect class="card" x="60" y="150" width="240" height="132" rx="18"/>
+  <text x="180" y="190" class="head" text-anchor="middle">Member Browser</text>
+  <text x="180" y="220" class="body" text-anchor="middle">Mobile or desktop</text>
+  <text x="180" y="247" class="small" text-anchor="middle">HTTPS · Location permission</text>
+  <path class="line" d="M300 216 H365" marker-end="url(#arrow)"/>
+  <rect class="card" x="380" y="150" width="280" height="132" rx="18"/>
+  <rect class="tag" x="475" y="166" width="90" height="24" rx="12"/>
+  <text class="tagtext" x="520" y="182" text-anchor="middle">CLOUDFLARE</text>
+  <text x="520" y="220" class="head" text-anchor="middle">React + Vite App</text>
+  <text x="520" y="247" class="body" text-anchor="middle">Production frontend</text>
+  <path class="line" d="M520 282 V344" marker-end="url(#arrow)"/>
+  <rect class="card" x="360" y="360" width="320" height="142" rx="18"/>
+  <text x="520" y="397" class="head" text-anchor="middle">Location Check</text>
+  <text x="520" y="426" class="body" text-anchor="middle">Browser geolocation API</text>
+  <text x="520" y="451" class="body" text-anchor="middle">Check-in allowed near HQ</text>
+  <text x="520" y="477" class="small" text-anchor="middle">Runs before check-in is saved</text>
+  <path class="line" d="M680 430 H760" marker-end="url(#arrow)"/>
+  <rect class="card" x="780" y="360" width="350" height="142" rx="18"/>
+  <rect class="tag" x="905" y="375" width="100" height="24" rx="12"/>
+  <text class="tagtext" x="955" y="391" text-anchor="middle">SUPABASE</text>
+  <text x="955" y="430" class="head" text-anchor="middle">Postgres Database</text>
+  <text x="955" y="458" class="body" text-anchor="middle">Member state · Attendance logs</text>
+  <text x="955" y="481" class="small" text-anchor="middle">Read / write via Supabase client</text>
+  <path class="line" d="M955 502 V550 H520 V520" stroke-dasharray="7 7" marker-end="url(#arrow)"/>
+  <text x="745" y="578" class="small" text-anchor="middle">Attendance updates are synchronized through the shared database</text>
+  <rect x="60" y="610" width="1070" height="42" rx="12" fill="#fff4df" stroke="#f3d7a0"/>
+  <text x="595" y="636" font-family="Arial,sans-serif" font-size="14" fill="#8b641b" text-anchor="middle">Security note: client-side location checks are a UX control, not a substitute for server-side authorization and database policies.</text>
+</svg>
