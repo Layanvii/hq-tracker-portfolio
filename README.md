@@ -2,7 +2,7 @@
 
 A public, frontend-only demonstration of an HQ attendance dashboard built with Vite and vanilla JavaScript.
 
-## 🔗 Live Website
+## Website
 
 Explore the live HQ Tracker website: https://hq.iecpsau.org/
 
